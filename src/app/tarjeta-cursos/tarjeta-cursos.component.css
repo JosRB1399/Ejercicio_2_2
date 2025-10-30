@@ -1,0 +1,119 @@
+/* 🧩 Tarjeta base (sin fondo blanco ni borde) */
+.curso-card {
+  background: #f7f2fc !important;
+  box-shadow: none !important;
+  border-radius: 20px;
+  color: #333;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Elimina efecto hover del cuadro */
+.curso-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* 💜 Nombre del proyecto */
+.curso-titulo {
+  color: #8E2DE2; /* 💜 Morado suave */
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+/* 📘 Descripción debajo del nombre */
+.curso-descripcion {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* 🪶 Acciones */
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 0.5rem;
+}
+
+button {
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* 💜 Botón primario */
+button[mat-raised-button] {
+  background: linear-gradient(90deg, #7B1FA2, #9C27B0);
+  color: white;
+  box-shadow: 0 3px 8px rgba(123, 31, 162, 0.3);
+}
+
+button[mat-raised-button]:hover {
+  background: linear-gradient(90deg, #6A1B9A, #8E24AA);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(106, 27, 154, 0.4);
+}
+
+/* 🎬 Animación de entrada */
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 900px) {
+  .curso-titulo {
+    font-size: 1.3rem;
+  }
+
+  .curso-descripcion {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .curso-titulo {
+    font-size: 1.1rem;
+  }
+
+  .curso-descripcion {
+    font-size: 0.9rem;
+  }
+
+  mat-card-actions {
+    justify-content: center;
+  }
+}
+
+/* ⚙️ Contenedor del texto centrado */
+.curso-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+
+
+

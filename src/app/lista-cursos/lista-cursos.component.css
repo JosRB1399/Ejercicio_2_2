@@ -1,0 +1,138 @@
+/* 💜 Fondo general de la sección de proyectos (idéntico al de "Hola, soy Josué Rubio Bravo") */
+:host {
+  display: block;
+  background: linear-gradient(90deg, #A43CCB 0%, #8E2DE2 100%);
+  padding: 60px 0;
+  border-radius: 20px;
+  color: #ffffff; /* Texto blanco para contraste */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🧩 Contenedor general de la lista (ahora en columna) */
+.lista-cursos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem; /* 🌟 Espacio equilibrado entre proyectos */
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  animation: fadeIn 1s ease;
+}
+
+/* 🎴 Cada tarjeta del proyecto (presentación limpia y profesional) */
+.proyecto-item {
+  width: 100%;
+  max-width: 900px;
+  background: #f7f2fc; /* 💜 Color lila claro en lugar de blanco */
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  padding: 2rem; /* 🌟 Espacio interno moderado */
+  margin-bottom: 1rem; /* 🌟 Separación adicional entre proyectos */
+}
+
+/* ✨ Efecto sutil al pasar el mouse */
+.proyecto-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* 🖼 Ajuste visual para tarjetas y contenido */
+app-tarjeta-cursos {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* 💜 Título de la sección */
+.lista-cursos h3 {
+  color: #8E2DE2;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* 🏷 Encabezado de la sección */
+.lista-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.lista-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.lista-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* 🌌 Estado vacío */
+.empty-state {
+  text-align: center;
+  color: #ffffff;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  .proyecto-item {
+    max-width: 100%;
+    padding: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lista-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lista-cursos {
+    padding: 0 1rem;
+    gap: 2.5rem; /* 🔹 Espacio más compacto en móviles */
+  }
+
+  .lista-header p {
+    font-size: 0.9rem;
+  }
+
+  .proyecto-item {
+    padding: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 🎬 Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🚫 Eliminar imagen que aparece debajo de todos los proyectos */
+.lista-cursos > img,
+.lista-vertical > img {
+  display: none !important;
+}
+

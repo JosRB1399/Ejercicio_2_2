@@ -1,0 +1,412 @@
+/* 🎨 Paleta moderna estilo Powerpay */
+:root {
+  --primary-color: #A43CCB; /* 💜 Color morado exacto del botón */
+  --secondary-color: #8E2DE2; /* 💜 Tonalidad complementaria del degradado */
+  --accent-color: #8e2de2;
+  --text-color: #2d2d2d;
+  --bg-light: #f9f9fb;
+  --bg-white: #ffffff;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ⚙️ Global */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 🧭 HEADER — se mantiene la franja morada EXACTA */
+.header {
+  background: linear-gradient(90deg, #A43CCB 0%, #8E2DE2 100%);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.08);
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+.brand-role {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links button {
+  color: white;
+  font-weight: 500;
+  text-transform: none;
+  transition: var(--transition);
+}
+
+.nav-links button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.contact-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  transition: var(--transition);
+}
+
+.contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 💜 Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #faf8ff 0%, #f3f0ff 100%);
+  padding: 120px 20px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at center, #d6b3ff44 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at center, #caa4ff33 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-subtitle {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 15px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.hero-image {
+  width: 640px; /* Tamaño del contenedor (mismo que el cuadro negro anterior) */
+  height: 450px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px; /* 🔹 Bordes redondeados */
+}
+
+.hero-illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Hace que la imagen llene todo el contenedor sin deformarse */
+  border-radius: 24px; /* 🔹 Mantiene bordes redondeados iguales al contenedor */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* 🔹 Sombra elegante */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-illustration:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 👨 Sobre mí */
+.about-section {
+  background: #f7f2fc; /* 💜 Fondo morado más claro */
+  color: #fff;
+  padding: 70px 30px;
+  border-radius: 20px;
+  margin: 100px auto;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  max-width: 900px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.about-section .section-title {
+  color: #8E2DE2;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.about-section .section-description {
+  color: #000;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* 🌈 Fondo exterior morado para toda la sección "Sobre mí" */
+.about-background {
+  background-color: #ab84d3; 
+  padding: 60px 0; /* conserva el espaciado vertical */
+}
+
+/* 💼 Proyectos */
+.projects-section {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #faf8ff 0%, #f3f0ff 100%); /* 💜 Mismo fondo que "Hola, soy Josué Rubio Bravo" */
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, #d6b3ff44 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.projects-section::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, #caa4ff33 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.projects-section .section-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+/* 📬 Contacto */
+/* 💜 Fondo morado exterior para la sección "Contacto" */
+.contact-background {
+  background-color: #ab84d3; 
+  padding: 60px 0; /* conserva el espaciado vertical */
+}
+
+.contact-section {
+  background: #f7f2fc; /* 💜 Fondo morado más claro */
+  color: #fff;
+  padding: 70px 30px;
+  border-radius: 20px;
+  margin: 100px auto;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  max-width: 900px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.contact-section .section-title {
+  color: #8E2DE2;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.contact-section .section-description {
+  color: #000;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* 📧 Bloque de contacto */
+.contact-info {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+.contact-info strong {
+  color: #8E2DE2; /* 💜 morado del tema */
+}
+
+/* Elimina márgenes que separen el footer */
+.footer {
+  margin-top: 0;
+}
+
+/* Asegura que no haya espacio blanco lateral */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* 🦶 Footer */
+.footer {
+  background: linear-gradient(90deg, #A43CCB 0%, #8E2DE2 100%);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.95rem;
+  border-top-left-radius: 0;   /* 🔹 Sin bordes redondeados arriba */
+  border-top-right-radius: 0;  /* 🔹 Sin bordes redondeados arriba */
+  width: 100vw;                /* 🔹 Ocupa todo el ancho de la ventana */
+  margin: 0;                   /* 🔹 Sin márgenes */
+}
+
+/* ✨ Animaciones suaves */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsividad */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-illustration {
+    max-width: 340px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-section,
+  .contact-section {
+    margin: 40px 15px;
+  }
+}

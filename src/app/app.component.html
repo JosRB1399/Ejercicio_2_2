@@ -1,0 +1,124 @@
+<!-- 🌟 HEADER FIJO Y MODERNO -->
+<header
+  class="header mat-elevation-z6 purple-header"
+  [ngClass]="{ 'toolbar-scrolled': isScrolled }"
+  role="banner"
+>
+  <div class="container header-content">
+    <!-- 🔹 LOGO + NOMBRE -->
+    <div class="brand">
+      <img
+        src="assets/images/logo3.png"
+        alt="Logo Josué Rubio"
+        class="brand-logo"
+      />
+      <div class="brand-info">
+        <h1 class="brand-name">{{ title }}</h1>
+        <p class="brand-role">{{ subtitle }}</p>
+      </div>
+    </div>
+
+    <!-- 🔹 NAVEGACIÓN -->
+    <nav class="nav-links">
+      <button mat-button (click)="scrollToSection('about')">Sobre mí</button>
+      <button mat-button (click)="scrollToSection('projects')">Proyectos</button>
+      <button
+        mat-stroked-button
+        color="accent"
+        class="contact-btn"
+        (click)="scrollToSection('contact')"
+      >
+        Contacto
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- 💜 HERO PRINCIPAL MODERNO -->
+<section class="hero-section">
+  <div class="hero-inner container">
+    <div class="hero-text">
+      <h2 class="hero-subtitle">Hola, soy</h2>
+      <h1 class="hero-title">Josué Rubio Bravo</h1>
+      <p class="hero-description">
+        Creo interfaces web modernas, interactivas y optimizadas para brindar
+        experiencias digitales únicas. Convierto ideas en soluciones visuales
+        que conectan diseño y tecnología.
+      </p>
+      <button
+        mat-flat-button
+        color="accent"
+        class="btn-primary"
+        (click)="scrollToSection('projects')"
+      >
+        Ver mis proyectos
+      </button>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="assets/images/DesarrolladorFrontEnd.png"
+        alt="Desarrollador Front-End trabajando en código"
+        class="hero-illustration"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 👨 SOBRE MÍ (Actualizado con fondo morado #7d4cb0 detrás del cuadro) -->
+<section class="about-background">
+  <section id="about" class="section about-section dark-purple-bg">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <p class="section-description">
+        "Me especializo en el desarrollo de interfaces modernas, funcionales y
+        accesibles.  
+        Mi objetivo es transformar ideas en experiencias digitales atractivas y
+        fluidas."
+      </p>
+    </div>
+  </section>
+</section>
+
+<!-- 💼 PROYECTOS CON FONDO MORADO DEGRADADO -->
+<section id="projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title">Proyectos destacados</h2>
+
+        <!-- ✅ Lista de cursos / proyectos destacados -->
+    <app-lista-cursos></app-lista-cursos>
+
+    <!-- 🔹 Imagen a pantalla completa del proyecto -->
+    <div class="overlay" *ngIf="mostrarImagen" (click)="cerrarProyecto()">
+      <img
+        src="assets/images/Landingpageinteractiva.png"
+        alt="Landing Page Interactiva"
+        class="imagen-proyecto"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 📬 CONTACTO -->
+<section class="contact-background">
+  <section id="contact" class="section contact-section dark-purple-bg">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-description">
+        Si deseas comunicarte conmigo, puedes hacerlo a través de los siguientes medios:
+      </p>
+
+      <div class="contact-info">
+        <p><strong>Correo:</strong> {{ email }}</p>
+        <p><strong>Teléfono:</strong> {{ phone }}</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ⚫ FOOTER -->
+<footer class="footer mat-elevation-z2">
+  <div class="container">
+    © 2025 <strong>{{ title }}</strong> — Todos los derechos reservados.
+  </div>
+</footer>

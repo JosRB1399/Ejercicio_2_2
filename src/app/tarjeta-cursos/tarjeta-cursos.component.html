@@ -1,0 +1,48 @@
+<!-- 🧩 Tarjeta del curso -->
+  <mat-card 
+  class="curso-card" 
+  style="
+    background-color: #f7f2fc; 
+    border: none; 
+    box-shadow: none; 
+    width: 100%; 
+    padding: 1rem;
+  "
+>
+  <!-- 🧾 Contenido textual centrado -->
+    <div 
+    class="curso-texto" 
+    style="
+      background-color: #f7f2fc; 
+      width: 100%; 
+      height: 100%; 
+      border-radius: 0; 
+      padding: 1rem;
+    "
+  >
+    <!-- 💜 Nombre del proyecto -->
+    <h3 class="curso-titulo">{{ curso.titulo }}</h3>
+
+    <!-- 📘 Descripción del proyecto (visible debajo del título) -->
+    <p 
+      class="curso-descripcion" 
+      *ngIf="descripcion" 
+      style="margin: 0.5rem 0 1rem 0; text-align: center;"
+    >
+      "{{ descripcion }}"
+    </p>
+
+    <!-- 🔘 Solo el botón de Ver proyecto (ACTUALIZADO) -->
+    <div class="curso-acciones">
+      <button
+  mat-raised-button
+  color="primary"
+  class="btn-accent"
+  (click)="verProyecto(curso.link)"
+>
+  <mat-icon>open_in_new</mat-icon>
+  Ver proyecto
+</button>
+    </div>
+  </div>
+</mat-card>

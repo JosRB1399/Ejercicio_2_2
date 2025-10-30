@@ -1,0 +1,43 @@
+<div class="lista-cursos" style="margin-top: -1rem;"> 
+  <!-- 💼 Encabezado -->
+  <div class="lista-header" style="margin-bottom: 0.2rem;">
+    <h2>Mis Proyectos</h2>
+    <p style="margin-bottom: 0;">
+      Explora algunas de mis aplicaciones y trabajos desarrollados con pasión 💜
+    </p>
+  </div>
+
+  <!-- 🔹 Lista vertical de proyectos -->
+  <div *ngIf="cursos.length > 0" class="lista-vertical" style="margin-top: -1.2rem;">
+    <div *ngFor="let curso of cursos" class="proyecto-item">
+      
+      <!-- 🔹 Tarjeta del curso con descripción incluida -->
+      <app-tarjeta-cursos [curso]="curso">
+        <!-- 📝 Descripción dentro de la tarjeta (justo encima del botón) -->
+        <p
+          class="proyecto-descripcion"
+          style="color: #444; font-size: 1rem; text-align: center; margin: 0.5rem 0 0;"
+        >
+          “{{ curso.descripcion }}”
+        </p>
+
+    +<!-- 🔗 Botón para ver proyecto (abre la imagen en pantalla completa) -->
+       <button
+         mat-stroked-button
+         color="primary"
+         style="display: block; margin: 1rem auto 0; border-color: #7a2cff; color: #7a2cff;"
+         (click)="verProyecto(curso.link)"
+       >
+          Ver proyecto
+        </button>
+      </app-tarjeta-cursos>
+
+    </div>
+  </div>
+
+  <!-- 🪶 Estado vacío -->
+  <div *ngIf="cursos.length === 0" class="empty-state">
+    <mat-icon color="primary" style="font-size: 48px;">hourglass_empty</mat-icon>
+    <p>No hay proyectos disponibles aún. ¡Pronto subiré más contenido!</p>
+  </div>
+</div>

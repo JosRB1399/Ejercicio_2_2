@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #2b004b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+        background: #2b004b;
+      }
+
+      button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #8e2de2, #a43ccb);
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="window.history.back()">← Volver</button>
+    <img id="imagen" src="" alt="Proyecto" />
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const imagen = document.getElementById("imagen");
+
+      switch (id) {
+        case "landing":
+          imagen.src = "assets/images/Landingpageinteractiva.png";
+          break;
+        case "dashboard":
+          imagen.src = "assets/images/Dashboardfinanciero.png";
+          break;
+        case "tareas":
+          imagen.src = "assets/images/Gestordetareas.png";
+          break;
+        case "portafolio":
+          imagen.src = "assets/images/Portafoliopersonal.png";
+          break;
+        default:
+          imagen.src = "";
+          document.body.innerHTML = "<h1 style='color:white'>Proyecto no encontrado</h1>";
+      }
+    </script>
+  </body>
+</html>

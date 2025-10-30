@@ -1,0 +1,24 @@
+# Angular build output
+/dist
+/tmp
+/out-tsc
+
+# Angular cache (para evitar archivos grandes)
+.angular/
+.angular/cache/
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Environment files
+/src/environments/*.ts
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
