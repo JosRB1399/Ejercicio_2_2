@@ -71,6 +71,7 @@ Ejercicio_2_2/
 ### 1️. Clonar el repositorio
 
 git clone https://github.com/JosRB1399/Ejercicio_2_2
+
 cd Ejercicio_2_2
 
 ### 2️. Instalar las dependencias
